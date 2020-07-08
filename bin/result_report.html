@@ -228,9 +228,9 @@
         
     <div class='page-header'>
         <h1>测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-07-07 19:38:23</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:02.037602</p>
-<p class='attribute'><strong>测试结果:</strong> 共 3 用例， 通过 1， 失败 2，通过率= 33.33%</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-07-08 21:21:42</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.672239</p>
+<p class='attribute'><strong>测试结果:</strong> 共 1 用例， 失败 1，通过率= 0.00%</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>勺子课堂api</p></div>
@@ -240,10 +240,10 @@
     <div class="btn-group btn-group-sm"></div>
      <div>
         <div style ="float:left" >
-             <button class="btn btn-primary">用例总数 ( 3 )</button>
-             <button class="btn btn-success" onclick='javascript:showCase(1)'>通过 ( 1 )</button>
+             <button class="btn btn-primary">用例总数 ( 1 )</button>
+             <button class="btn btn-success" onclick='javascript:showCase(1)'>通过 ( 0 )</button>
              <button class="btn btn-warning" onclick='javascript:showCase(2)'>错误 ( 0 )</button>
-             <button class="btn btn-danger" onclick='javascript:showCase(3)'>失败 ( 2 )</button>
+             <button class="btn btn-danger" onclick='javascript:showCase(3)'>失败 ( 1 )</button>
         </div>
         <div style="float:right">
             <button class="btn btn-info" onclick='javascript:showCase(0)'>全部收起</button>
@@ -272,75 +272,34 @@
         
     <tr class='failClass'>
         <td>testcase.test_login.TestLogin</td>
-        <td>3</td>
         <td>1</td>
-        <td>2</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
+        <td>1</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_right_login</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_login</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        通过</a>
-
-    <div id='div_pt1.1' class="popup_window">
-        <pre>pt1.1: C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.shaoziketang.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,
-{'code': 200, 'message': '登录成功', 'data': {'token': '8ae38bd178fa239947cecdbfe2f323b8', 'avator': 'http://thirdwx.qlogo.cn/mmopen/vi_32/vNh0OeYBx4LaUfNWic5iaDKzdG37UCuHCwVkqtkuLCIU63HhpLK9Aynviau7H8ia1WgeIITasZqNZic3KDA4791AZ9w/132', 'avatar': 'http://thirdwx.qlogo.cn/mmopen/vi_32/vNh0OeYBx4LaUfNWic5iaDKzdG37UCuHCwVkqtkuLCIU63HhpLK9Aynviau7H8ia1WgeIITasZqNZic3KDA4791AZ9w/132', 'nickname': '万元', 'name': '万元', 'user_id': 2434654, 'password': '', 'is_blocked': '', 'area': '天津市', 'brand': '勺子课堂', 'job': '', 'mobile': 15312362160, 'is_vip': 1, 'position': '门店骨干-门店管理层（区域经理、店长）', 'rand_str': '5f045eb0a2ddc', 'openid': 'oeeSo5RhVckTs336HtUVNFfKJLbY'}}
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft1.2' class='none'>
-    <td class='failCase'><div class='testcase'>test_wrongphone_login</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
         失败</a>
 
-    <div id='div_ft1.2' class="popup_window">
-        <pre>ft1.2: C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.shaoziketang.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+    <div id='div_ft1.1' class="popup_window">
+        <pre>ft1.1: {'case_id': 1, 'title': '输入正常的手机号和验证码', 'url': 'https://api.shaoziketang.com/wap/v2.8/login/data', 'data': '{"mobile":"15312362160","rand":"678123"}', 'method': 'post', 'expect': 200, 'fact': None}
+C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.shaoziketang.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning,
-{'code': -1, 'message': '手机号不符合要求', 'data': []}
+1 输入正常的手机号和验证码
+{'code': -1, 'message': '请求参数错误', 'data': []}
+test_login的错误是200 != -1
 Traceback (most recent call last):
-  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 25, in test_wrongphone_login
+  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 21, in test_login
     raise e
-  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 22, in test_wrongphone_login
-    self.assertEqual(200,res.json()['code'])
+  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 18, in test_login
+    self.assertEqual(item['expect'], res.json()['code'])
 AssertionError: 200 != -1
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft1.3' class='none'>
-    <td class='failCase'><div class='testcase'>test_wrongpwd_login</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
-        失败</a>
-
-    <div id='div_ft1.3' class="popup_window">
-        <pre>ft1.3: C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.shaoziketang.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,
-{'code': '-1', 'message': '验证码不正确或已过期', 'data': []}
-Traceback (most recent call last):
-  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 34, in test_wrongpwd_login
-    raise e
-  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 32, in test_wrongpwd_login
-    self.assertEqual(200,res.json()['code'])
-AssertionError: 200 != '-1'
 </pre>
     </div>
     <!--css div popup end-->
@@ -350,9 +309,9 @@ AssertionError: 200 != '-1'
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>3</td>
             <td>1</td>
-            <td>2</td>
+            <td>0</td>
+            <td>1</td>
             <td>0</td>
             <td>&nbsp;</td>
         </tr>
@@ -387,8 +346,8 @@ AssertionError: 200 != '-1'
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[ 
-                        {value:1, name:'通过'},
-                        {value:2, name:'失败'},
+                        {value:0, name:'通过'},
+                        {value:1, name:'失败'},
                         {value:0, name:'错误'}
                     ],
                     itemStyle: {
