@@ -10,6 +10,8 @@ class operationpyxl:
     def get_data(self):
         a=load_workbook(self.path)
         sheet=a[self.sheet_name]
+        print(sheet.max_row)
+        print(sheet.max_column)
         test_data=[]
         for i in range(2,sheet.max_row+1):#从第2行开始取值
             sub_data = {}
@@ -22,7 +24,8 @@ class operationpyxl:
             sub_data["fact"] = sheet.cell(i,7).value
             test_data.append(sub_data)
         return test_data
-# if __name__ == '__main__':
-#     print(operationpyxl(data_path,'sheet1').get_data())
+
+if __name__ == '__main__':
+    print(operationpyxl(data_path,'sheet1').get_data())
 
 

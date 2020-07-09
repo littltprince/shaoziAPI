@@ -8,17 +8,25 @@ test_data=operationpyxl(data_path,'sheet1').get_data()
 class TestLogin(unittest.TestCase):
     def setUp(self):
         pass
+    def __init__(self,methodname,url,data,method,expect):
+        super(TestLogin,self).__init__(methodname)
+        self.url = url
+        self.data = data
+        self.method = method
+        self.expect = expect
+
     def test_login(self):
-        for item in test_data:
-            print(item)
-            res=HttpResquest().http_request(item['url'],item['data'],item['method'])
-            print(item['case_id'],item['title'])
-            print(res.json())
-            try:
-                self.assertEqual(item['expect'], res.json()['code'])
-            except AssertionError as e:
-                print("test_login的错误是{}".format(e))
-                raise e
+        # for item in test_data:
+        #     print("第{0}条用例的简介为{1}，测试的参数为{2}".format(item['case_id'],item['title'],(item['url'],item['data'],item['method'])))
+        res = HttpResquest().http_request(self.url,self.data,self.method)
+        print(self.url,self.data,self.method)
+        print(type(res.json()['code']))
+        print(res.json())
+        try:
+            self.assertEqual(self.expect, res.json()['code'])
+        except AssertionError as e:
+            print("test_login的错误是{}".format(e))
+            raise e
 
 
     # def test_right_login(self):
