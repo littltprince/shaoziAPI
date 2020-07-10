@@ -228,9 +228,9 @@
         
     <div class='page-header'>
         <h1>测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-07-09 10:38:14</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.879649</p>
-<p class='attribute'><strong>测试结果:</strong> 共 1 用例， 错误 1，通过率= 0.00%</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-07-10 20:25:12</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:01.654085</p>
+<p class='attribute'><strong>测试结果:</strong> 共 3 用例， 通过 2， 失败 1，通过率= 66.67%</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>勺子课堂api</p></div>
@@ -240,10 +240,10 @@
     <div class="btn-group btn-group-sm"></div>
      <div>
         <div style ="float:left" >
-             <button class="btn btn-primary">用例总数 ( 1 )</button>
-             <button class="btn btn-success" onclick='javascript:showCase(1)'>通过 ( 0 )</button>
-             <button class="btn btn-warning" onclick='javascript:showCase(2)'>错误 ( 1 )</button>
-             <button class="btn btn-danger" onclick='javascript:showCase(3)'>失败 ( 0 )</button>
+             <button class="btn btn-primary">用例总数 ( 3 )</button>
+             <button class="btn btn-success" onclick='javascript:showCase(1)'>通过 ( 2 )</button>
+             <button class="btn btn-warning" onclick='javascript:showCase(2)'>错误 ( 0 )</button>
+             <button class="btn btn-danger" onclick='javascript:showCase(3)'>失败 ( 1 )</button>
         </div>
         <div style="float:right">
             <button class="btn btn-info" onclick='javascript:showCase(0)'>全部收起</button>
@@ -270,33 +270,83 @@
             <td>查看</td>
         </tr>
         
-    <tr class='errorClass'>
+    <tr class='failClass'>
         <td>testcase.test_login.TestLogin</td>
+        <td>3</td>
+        <td>2</td>
         <td>1</td>
         <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
     </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_login</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_1</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        错误</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
 
-    <div id='div_ft1.1' class="popup_window">
-        <pre>ft1.1: 第1条用例的简介为输入正常的手机号和验证码，测试的参数为('https://api.shaoziketang.com/wap/v2.8/login/data', '{"mobile":"15312362160","rand":"678123"}', 'post')
+    <div id='div_pt1.1' class="popup_window">
+        <pre>pt1.1: 开始测试啦
+第1条用例的简介为输入正常的手机号和验证码，测试的参数为('https://api.shaoziketang.com/wap/v2.8/login/data', '{"mobile":"15312362160","rand":"678123"}', 'post')
 C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.shaoziketang.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning,
 &lt;class 'int'&gt;
-{'code': 200, 'message': '登录成功', 'data': {'token': '30b27e5f4ecee5ffd766ec2eb7df540e', 'avator': 'http://thirdwx.qlogo.cn/mmopen/vi_32/vNh0OeYBx4LaUfNWic5iaDKzdG37UCuHCwVkqtkuLCIU63HhpLK9Aynviau7H8ia1WgeIITasZqNZic3KDA4791AZ9w/132', 'avatar': 'http://thirdwx.qlogo.cn/mmopen/vi_32/vNh0OeYBx4LaUfNWic5iaDKzdG37UCuHCwVkqtkuLCIU63HhpLK9Aynviau7H8ia1WgeIITasZqNZic3KDA4791AZ9w/132', 'nickname': '万元', 'name': '万元', 'user_id': 2434654, 'password': '', 'is_blocked': '', 'area': '天津市', 'brand': '勺子课堂', 'job': '', 'mobile': 15312362160, 'is_vip': 1, 'position': '门店骨干-门店管理层（区域经理、店长）', 'rand_str': '5f068317a08b7', 'openid': 'oeeSo5RhVckTs336HtUVNFfKJLbY'}}
+{'code': 200, 'message': '登录成功', 'data': {'token': 'bf36d054f53f9862475a7cbf76cf20fa', 'avator': 'http://thirdwx.qlogo.cn/mmopen/vi_32/vNh0OeYBx4LaUfNWic5iaDKzdG37UCuHCwVkqtkuLCIU63HhpLK9Aynviau7H8ia1WgeIITasZqNZic3KDA4791AZ9w/132', 'avatar': 'http://thirdwx.qlogo.cn/mmopen/vi_32/vNh0OeYBx4LaUfNWic5iaDKzdG37UCuHCwVkqtkuLCIU63HhpLK9Aynviau7H8ia1WgeIITasZqNZic3KDA4791AZ9w/132', 'nickname': '万元', 'name': '万元', 'user_id': 2434654, 'password': '', 'is_blocked': '', 'area': '天津市', 'brand': '勺子课堂', 'job': '', 'mobile': 15312362160, 'is_vip': 1, 'position': '门店骨干-门店管理层（区域经理、店长）', 'rand_str': '5f085e2946559', 'openid': 'oeeSo5RhVckTs336HtUVNFfKJLbY'}}
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_2</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>pt1.2: 开始测试啦
+第2条用例的简介为输入错误的手机号和正确的验证码，测试的参数为('https://api.shaoziketang.com/wap/v2.8/login/data', '{"mobile":"1531236216","rand":"678123"}', 'post')
+C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.shaoziketang.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+&lt;class 'int'&gt;
+{'code': -1, 'message': '手机号不符合要求', 'data': []}
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_login_3</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        失败</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <pre>ft1.3: 开始测试啦
+第3条用例的简介为输入正确的手机号和错误的验证码，测试的参数为('https://api.shaoziketang.com/wap/v2.8/login/data', '{"mobile":"15312362160","rand":"678124"}', 'post')
+C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.shaoziketang.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+&lt;class 'str'&gt;
+{'code': '-1', 'message': '验证码不正确或已过期', 'data': []}
+test_login的错误是-1 != '-1'
 Traceback (most recent call last):
-  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 18, in test_login
-    self.assertEqual(item['expect'], eval(res.json()['code']))
-TypeError: eval() arg 1 must be a string, bytes or code object
+  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\venv\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 33, in test_login
+    raise e
+  File "C:\Users\勺子课堂\PycharmProjects\shaoziketang\testcase\test_login.py", line 30, in test_login
+    self.assertEqual(item['expect'], res.json()['code'])
+AssertionError: -1 != '-1'
 </pre>
     </div>
     <!--css div popup end-->
@@ -306,10 +356,10 @@ TypeError: eval() arg 1 must be a string, bytes or code object
 
         <tr id='total_row'>
             <td>总计</td>
+            <td>3</td>
+            <td>2</td>
             <td>1</td>
             <td>0</td>
-            <td>0</td>
-            <td>1</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -343,9 +393,9 @@ TypeError: eval() arg 1 must be a string, bytes or code object
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[ 
-                        {value:0, name:'通过'},
-                        {value:0, name:'失败'},
-                        {value:1, name:'错误'}
+                        {value:2, name:'通过'},
+                        {value:1, name:'失败'},
+                        {value:0, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {
