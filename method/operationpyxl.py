@@ -30,25 +30,25 @@ class operationpyxl:
             sub_data["expect"] = sheet.cell(i,7).value
             sub_data["fact"] = sheet.cell(i,8).value
             test_data.append(sub_data)
-        # '''1、根据用例编号来执行用例'''
-        # if testnum =='all':
-        #     final_data=test_data
-        # else:
-        #     final_data=[]
-        #     for item in test_data:
-        #         if item['case_id'] in eval(testnum):
-        #             final_data.append(item)
-        # return final_data
-
-        '''2、根据模块来执行用例'''
-        if mode == None:
-            final_data = test_data
+        '''1、根据用例编号来执行用例'''
+        if testnum =='all':
+            final_data=test_data
         else:
-            final_data = []
+            final_data=[]
             for item in test_data:
-                if item['mode'] in mode:
+                if item['case_id'] in eval(testnum):
                     final_data.append(item)
         return final_data
+
+        # '''2、根据模块来执行用例'''
+        # if mode == None:
+        #     final_data = test_data
+        # else:
+        #     final_data = []
+        #     for item in test_data:
+        #         if item['mode'] in mode:
+        #             final_data.append(item)
+        # return final_data
 
 
 

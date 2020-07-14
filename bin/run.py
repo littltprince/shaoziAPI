@@ -5,7 +5,7 @@ import time
 from method import htmltestrunner
 import os
 from method.operationpyxl import *
-test_data=operationpyxl(data_path,'sheet1').get_data()
+# test_data=operationpyxl(data_path,'sheet1').get_data()
 
 #通过创建实例的方式来加载用例,注意Excel中每个参数的数据类型，除了数字其他基本全是‘str'格式
 # suite=unittest.TestSuite()

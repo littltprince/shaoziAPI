@@ -4,7 +4,7 @@ import unittest
 from  method.HttpResquest import HttpResquest
 from method.operationpyxl import *
 from ddt import ddt,data,unpack
-test_data=operationpyxl(data_path,'sheet1').get_data()
+test_data=operationpyxl(data_path,'login').get_data()
 # print("第一个test_data是",test_data)
 @ddt
 class TestLogin(unittest.TestCase):
