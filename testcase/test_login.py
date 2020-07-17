@@ -26,11 +26,91 @@ class TestLogin(unittest.TestCase):
         # print(self.url,self.data,self.method)
         print(type(res.json()['code']))
         print(res.json())
+        operationpyxl(data_path,'login').write_fact(item['case_id']+1,res.json()['code'])
         try:
             self.assertEqual(item['expect'], res.json()['code'])
+
         except AssertionError as e:
             print("test_login的错误是{}".format(e))
             raise e
+        finally:
+            operationpyxl(data_path, 'login').write_result(item['case_id'] + 1, )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     # def test_right_login(self):
