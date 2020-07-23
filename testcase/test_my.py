@@ -24,8 +24,9 @@ class Test_my(unittest.TestCase):
         operationpyxl(file_path,'my').write_fact(item['case_id'] + 1,res.json()['code'])
         try:
             self.assertEqual(res.json()['code'],200)
-
+            operationpyxl(file_path, 'my').write_result(item['case_id'] + 1, 'pass')
         except AssertionError as e:
+            operationpyxl(file_path, 'my').write_result(item['case_id'] + 1, 'Failed')
             raise e
-        finally:
-            operationpyxl(file_path, 'my').write_result(item['case_id'] + 1, str(res.json()))
+        # finally:
+        #     operationpyxl(file_path, 'my').write_result(item['case_id'] + 1, str(res.json()))
