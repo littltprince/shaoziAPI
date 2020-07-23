@@ -2,6 +2,7 @@
 from openpyxl import load_workbook
 from method.ReadConfig import opconfig
 import os
+from method.Get_message import Get_message
 base_dir=os.path.dirname(os.path.dirname(__file__))
 data_path=os.path.join(base_dir,'data/ddt_data.xlsx')
 filePath=os.path.join(base_dir,'configs/test_case.config')
@@ -18,6 +19,7 @@ class operationpyxl:
         testnum=opconfig().OpConfig(filePath,'PEOPLE','testnum')
         '''2、根据模块名来执行用例'''
         mode=opconfig().OpConfig(filePath,'PEOPLE','mode')
+        host=getattr(Get_message,'Api')
         test_data=[]
         for i in range(2,sheet.max_row+1):#从第2行开始取值
             sub_data = {}
@@ -26,8 +28,10 @@ class operationpyxl:
             sub_data["title"] = sheet.cell(i,3).value
             sub_data["url"] = sheet.cell(i,4).value
             # sub_data["data"] = sheet.cell(i,5).value
-            if host in sub_data['data']:
-                host=getattr()
+            if sheet.cell(i,5).value.find('${host}') !=-1:
+                sub_data["data"]=sheet.cell(i,5).value.replace('${host}',host)
+            else:
+                sub_data["data"]= sheet.cell(i,5).value
             sub_data["method"] = sheet.cell(i,6).value
             sub_data["expect"] = sheet.cell(i,7).value
             sub_data["fact"] = sheet.cell(i,8).value
@@ -57,7 +61,7 @@ class operationpyxl:
         sheet=a[self.sheet_name]
         sheet.cell(row,8).value=fact
         a.save(self.path)
-    '''写回用例的执行通过或者失败'''
+    '''写回用例的执行通过或者失败,excel中只能写入str和数字类型的数据，其他数据的需要转格式'''
     def write_result(self,row,result):
         a=load_workbook(self.path)
         sheet=a[self.sheet_name]

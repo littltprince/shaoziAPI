@@ -4,6 +4,7 @@ import unittest
 from  method.HttpResquest import HttpResquest
 from method.operationpyxl import *
 from ddt import ddt,data,unpack
+from method.Get_message import Get_message
 test_data=operationpyxl(data_path,'login').get_data()
 # print("第一个test_data是",test_data)
 @ddt
@@ -29,12 +30,13 @@ class TestLogin(unittest.TestCase):
         operationpyxl(data_path,'login').write_fact(item['case_id']+1,res.json()['code'])
         try:
             self.assertEqual(item['expect'], res.json()['code'])
-
+            operationpyxl(data_path, 'login').write_result(item['case_id'] + 1, 'pass')
         except AssertionError as e:
             print("test_login的错误是{}".format(e))
+            operationpyxl(data_path, 'login').write_result(item['case_id'] + 1, 'Failed')
             raise e
-        finally:
-            operationpyxl(data_path, 'login').write_result(item['case_id'] + 1, )
+        # finally:
+        #     operationpyxl(data_path, 'login').write_result(item['case_id'] + 1, str(res.json()))
 
 
 
