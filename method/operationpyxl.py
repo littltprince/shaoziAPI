@@ -25,9 +25,9 @@ class operationpyxl:
             sub_data["mode"]= sheet.cell(i,2).value
             sub_data["title"] = sheet.cell(i,3).value
             sub_data["url"] = sheet.cell(i,4).value
-            # sub_data["data"] = sheet.cell(i,5).value
-            if host in sub_data['data']:
-                host=getattr()
+            sub_data["data"] = sheet.cell(i,5).value
+            # if host in sub_data['data']:
+            #     host=getattr()
             sub_data["method"] = sheet.cell(i,6).value
             sub_data["expect"] = sheet.cell(i,7).value
             sub_data["fact"] = sheet.cell(i,8).value
@@ -57,7 +57,7 @@ class operationpyxl:
         sheet=a[self.sheet_name]
         sheet.cell(row,8).value=fact
         a.save(self.path)
-    '''写回用例的执行通过或者失败'''
+    '''写回用例的执行通过或者失败,excel中只能写入str和数字类型的数据，其他数据的需要转格式'''
     def write_result(self,row,result):
         a=load_workbook(self.path)
         sheet=a[self.sheet_name]

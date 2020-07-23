@@ -1,6 +1,6 @@
 #encoding:utf-8
 class Get_message:
-    def get_token(self):
-        pass
+    Cookie=None
+
     def get_api(self):
         pass

@@ -1,4 +1,5 @@
 import unittest
+import requests
 from ddt import ddt,unpack,data
 from method.HttpResquest import HttpResquest
 from method.operationpyxl import operationpyxl
@@ -17,9 +18,14 @@ class Test_my(unittest.TestCase):
     @data(*test_data)
     def test_my(self,item):
         headers['token']=self.login()
-        res= HttpResquest().http_request(item['url'],headers,'get')
+        res = HttpResquest().http_request(item['url'],item['data'],item['method'],headers=headers)
+        # res=requests.get(item['url'],headers)
         print(res.json())
+        operationpyxl(file_path,'my').write_fact(item['case_id'] + 1,res.json()['code'])
         try:
             self.assertEqual(res.json()['code'],200)
+
         except AssertionError as e:
             raise e
+        finally:
+            operationpyxl(file_path, 'my').write_result(item['case_id'] + 1, str(res.json()))

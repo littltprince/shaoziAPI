@@ -33,8 +33,8 @@ class TestLogin(unittest.TestCase):
         except AssertionError as e:
             print("test_login的错误是{}".format(e))
             raise e
-        finally:
-            operationpyxl(data_path, 'login').write_result(item['case_id'] + 1, )
+        # finally:
+        #     operationpyxl(data_path, 'login').write_result(item['case_id'] + 1, str(res.json()))
 
 
 
