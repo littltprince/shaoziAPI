@@ -19,6 +19,9 @@ class operationpyxl:
         testnum=opconfig().OpConfig(filePath,'PEOPLE','testnum')
         '''2、根据模块名来执行用例'''
         mode=opconfig().OpConfig(filePath,'PEOPLE','mode')
+        '''切换测试的接口环境
+            Api----》正式环境
+            TestApi---->测试环境'''
         host=getattr(Get_message,'Api')
         test_data=[]
         for i in range(2,sheet.max_row+1):#从第2行开始取值
@@ -26,12 +29,12 @@ class operationpyxl:
             sub_data["case_id"]=sheet.cell(i,1).value
             sub_data["mode"]= sheet.cell(i,2).value
             sub_data["title"] = sheet.cell(i,3).value
-            sub_data["url"] = sheet.cell(i,4).value
-            # sub_data["data"] = sheet.cell(i,5).value
-            if sheet.cell(i,5).value.find('${host}') !=-1:
-                sub_data["data"]=sheet.cell(i,5).value.replace('${host}',host)
+            # sub_data["url"] = sheet.cell(i,4).value
+            if sheet.cell(i,4).value.find('${host}') !=-1:
+                sub_data["url"]=sheet.cell(i,4).value.replace('${host}',host)
             else:
-                sub_data["data"]= sheet.cell(i,5).value
+                sub_data["url"]= sheet.cell(i,4).value
+            sub_data["data"] = sheet.cell(i,5).value
             sub_data["method"] = sheet.cell(i,6).value
             sub_data["expect"] = sheet.cell(i,7).value
             sub_data["fact"] = sheet.cell(i,8).value
@@ -45,7 +48,9 @@ class operationpyxl:
                 if item['case_id'] in eval(testnum):
                     final_data.append(item)
         return final_data
-
+# if __name__ == '__main__':
+#     print(operationpyxl(data_path,'login').get_data())
+#     print(operationpyxl(data_path,'my').get_data())
         # '''2、根据模块来执行用例'''
         # if mode == None:
         #     final_data = test_data
