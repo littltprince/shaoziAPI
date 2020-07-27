@@ -16,7 +16,7 @@ password = "6FA2vbbCGEhenDVD"
 sender = "mengdebin@shaoziketang.com"
 
 # 接收邮箱
-receiver = "1316438682@qq.com"
+receiver = "1124479307@qq.com"
 
 # # 发送主题
 # subject = 'love'
@@ -37,13 +37,22 @@ def send_mail(file_new):
     f = open(file_new, 'rb')
     mail_body = f.read()
     f.close()
+    mail_msg = """
+    <p>勺子课堂测试报告...</p>
+    <p><a href=".\result_report.html">测试报告地址</a></p>
+    """
+    msg = MIMEText(mail_msg, 'html', 'utf-8')
+    msg['From'] = Header("测试负责人", 'utf-8')
+    msg['To'] = Header("各位大佬", 'utf-8')
 
-    msg = MIMEText(mail_body, 'html', 'utf-8')
-    msg['Subject'] = Header("自动化测试报告", 'utf-8')
+    subject = '勺子课堂测试报告'
+    msg['Subject'] = Header(subject, 'utf-8')
+    # msg = MIMEText(mail_body, 'html', 'utf-8')
+    # msg['Subject'] = Header("自动化测试报告", 'utf-8')
 
     smtp = smtplib.SMTP()
     smtp.connect('smtp.exmail.qq.com')  # 邮箱服务器
     smtp.login(user, password)  # 登录邮箱
-    smtp.sendmail(user, receiver, msg.as_string())  # 发送者和接收者
+    smtp.sendmail(sender, receiver, msg.as_string())  # 发送者和接收者
     smtp.quit()
     print("邮件已发出！注意查收。")
