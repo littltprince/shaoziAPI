@@ -5,6 +5,7 @@ import time
 from method import htmltestrunner
 import os
 from method.operationpyxl import *
+from bin import emails
 # test_data=operationpyxl(data_path,'sheet1').get_data()
 
 #通过创建实例的方式来加载用例,注意Excel中每个参数的数据类型，除了数字其他基本全是‘str'格式
@@ -19,6 +20,7 @@ from method.operationpyxl import *
 # a=os.getcwd()
 # now=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
 # 1、通过loader的方式来加载用例
+report=os.path.join(os.path.dirname(__file__),'result_report.html')
 filename='result_report.html'
 suite=unittest.TestLoader().discover(start_dir='testcase',pattern='test*.py',top_level_dir= None)
 with open(filename,'wb') as file:
@@ -28,3 +30,4 @@ with open(filename,'wb') as file:
                                          description='勺子课堂api'
                                          )
     runner.run(suite)
+    emails.send_mail(report)
