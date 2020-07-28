@@ -5,8 +5,12 @@ import time
 from method import htmltestrunner
 import os
 from method.operationpyxl import *
-from bin import emails
-from
+from method.OpEmails import send_email
+now=time.strftime('%Y-%m-%d %H:%M:%S')
+
+# 接收邮箱
+receiver=["1124479307@qq.com","1316438682@qq.com"]
+
 # test_data=operationpyxl(data_path,'sheet1').get_data()
 
 #通过创建实例的方式来加载用例,注意Excel中每个参数的数据类型，除了数字其他基本全是‘str'格式
@@ -31,4 +35,4 @@ with open(filename,'wb') as file:
                                          description='勺子课堂api'
                                          )
     runner.run(suite)
-    emails.send_mail(report)
+    send_email().sendemails(receiver,report)
