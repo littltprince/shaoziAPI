@@ -1,0 +1,2 @@
+2020-07-24 15:24:34,952  logde.py : ERROR  这是 error
+2020-07-24 15:24:34,953  logde.py : CRITICAL  这是 critical
