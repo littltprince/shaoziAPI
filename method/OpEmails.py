@@ -23,11 +23,11 @@ now=time.strftime('%Y-%m-%d %H:%M:%S')
 smtpserver="smtp.exmail.qq.com"
 # 发送邮箱用户/密码(登录邮箱操作)
 user="mengdebin@shaoziketang.com"
-password = "s6siqg9jNHVCfa4Z"
+password = "s6siqg9jNHVCfa4"
 # 发送邮箱
 sender="mengdebin@shaoziketang.com"
 # 接收邮箱
-receiver=["1124479307@qq.com","1316438682@qq.com"]
+receiver=["@qq.com","@shaoziketang.com"]
 class send_email:
     def sendemails(self,email_to,filepath):
         #---邮件的信息配置
@@ -48,15 +48,16 @@ class send_email:
                 <title>Title</title>
             </head>
             <body>
-            <h1>这里本次接口自动化的测试结果，请各位大佬查收，详情可点击链接或者附件</h1>
-            <h2>结果:<a href="<%=filepath%>">点击查看测试结果</a></h2>
+            <h1>这是本次接口自动化的测试结果，请各位大佬查收，详情可点击链接或者附件</h1>
+            <h2>结果:<a href="${url}">点击查看测试结果</a></h2>
             <hr>
             <h3>加油干鸭！！</h3>
             <img src="http://wx4.sinaimg.cn/large/007qPM5Ngy1g3cpqh9c53j30g40hkt9n.jpg">
             </body>
             </html>
             """
-
+        if html_msg.find('${url}') != -1:
+            html_msg = html_msg.replace('${url}', reportpath)
         # html 内容
         content_html = MIMEText(html_msg, "html", "utf-8")
         msg.attach(content_html)

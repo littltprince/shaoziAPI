@@ -9,7 +9,7 @@ from method.OpEmails import send_email
 now=time.strftime('%Y-%m-%d %H:%M:%S')
 
 # 接收邮箱
-receiver=["1124479307@qq.com","1316438682@qq.com"]
+receiver=["1124479307@qq.com","a"]
 
 # test_data=operationpyxl(data_path,'sheet1').get_data()
 
