@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<input lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>以为测试</title>
+    <title>测试网站</title>
+    <script type="text/javascript" src="asd.js"></script>
 </head>
 <body>
-上传文件：
-<input type="file">
+<!--哈哈哈这个里备注的格式-->
+<form>
+用户名:<br>
+<input type="text" name="name" maxlength="10">
 <br>
-年龄：<select>
-    <option>20一下</option>
-    <option>20-30</option>
-    <option>30以上</option>
+密码:<br>
+<input type="text" name="pwd" maxlength="10">
     <br>
-    <script>var ns="hahahha";
-    alert(ns)</script>
+    <input type="submit" value="登录">
+
+    <br>    <br>
+    性别：
+    <input type="radio" name="sex" value="男" checked>男
+    <input type="radio" name="sex" value="女">女
+</form>
+
+<br>
+头像：
+<input type="file">
+<br><br>
+住址：<select id="cmbProvince" name="cmbProvince"></select>
+                        <select id="cmbCity" name="cmbCity"></select>
+                        <select id="cmbArea" name="cmbArea"></select>
+
+
+               <script type="text/javascript">
+                    addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+               </script>
 </select>
-
-
-
+<br><br>
+爱好：<input type="checkbox" value="篮球">篮球
+<input type="checkbox" value="足球">足球
+<input type="checkbox" value="网球">网球
+<br>
+备注信息：
+<textarea rows="10" cols="30" maxlength="10">
+</textarea>
 </body>
 </html>
